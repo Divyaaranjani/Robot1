@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap");
+:root {
+  --dr-color-skin-one: #69a3d6;
+  --dr-color-skin-two: #254c83;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input,
+textarea,
+select {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+body {
+  background-color: #001020;
+}
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  padding: 0 30px;
+}
+.dr-sekelton-wrap {
+  cursor: pointer;
+  position: absolute;
+  text-align: center;
+  animation: move 3s ease-in-out infinite;
+}
+.dr-sekelton-wrap:hover {
+  animation-play-state: paused;
+}
+@keyframes move {
+  0% {
+    left: 25%;
+  }
+  50% {
+    left: 60%;
+  }
+  100% {
+    left: 25%;
+  }
+}
+.dr-robot-face {
+  width: 100px;
+  height: 120px;
+  background: var(--dr-color-skin-one);
+  display: inline-block;
+  border-radius: 30px 30px 0px 0px;
+  position: relative;
+}
+
+.dr-robot-eye-rap {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: 30px;
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+  align-items: center;
+}
+.dr-sekelton-wrap:hover .dr-robot-eye-one {
+  transform: scale(1.2);
+}
+.dr-robot-eye-one {
+  width: 30px;
+  height: 30px;
+  background: var(--dr-color-skin-two);
+  border-radius: 50%;
+  transition: transform 0.3s linear;
+}
+.dr-robot-face-mouth {
+  position: absolute;
+  width: 40px;
+  height: 10px;
+  border: 2px solid var(--dr-color-skin-two);
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  right: 10px;
+  display: block;
+  border-radius: 50%;
+}
+
+.dr-robot-head-wrap {
+  text-align: center;
+}
+.dr-spike-top {
+  border: 4px solid transparent;
+  border-top: 23px solid var(--dr-color-skin-two);
+  border-bottom: 80px solid var(--dr-color-skin-two);
+  width: 6px;
+  margin: auto;
+}
+.dr-robot-body-wrap {
+  width: 500px;
+  /* height: 500px; */
+}
+.dr-robo-center-body {
+  width: 230px;
+  background: var(--dr-color-skin-one);
+  height: 250px;
+  display: inline-grid;
+  place-items: center;
+  clip-path: polygon(0 0, 100% 0, 75% 100%, 25% 100%);
+  position: relative;
+  z-index: 1;
+  border-radius: 20px 20px 0 0;
+}
+.dr-robot-left-hand-wrap {
+  float: left;
+
+  position: relative;
+  transform-origin: right;
+  z-index: 0;
+  transform: rotate(30deg);
+  animation: updown 3s ease-in-out infinite;
+}
+@keyframes updown {
+  0% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(50deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+.dr-robot-left-hand-wrap .dr-robot-forarm {
+  width: 100%;
+  height: 70%;
+  background: var(--dr-color-skin-two);
+  border-radius: 50px 0 0 0;
+}
+.dr-robot-right-hand-wrap {
+  float: right;
+
+  position: relative;
+  transform-origin: left;
+  z-index: 0;
+  transform: rotate(-30deg);
+  animation: updown-2 3s ease-in-out infinite;
+}
+@keyframes updown-2 {
+  0% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(-50deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+.dr-robot-right-hand-wrap .dr-robot-forarm {
+  width: 100%;
+  height: 70%;
+  background: var(--dr-color-skin-two);
+  border-radius: 0px 150px 0 0;
+}
+.dr-robot-finger {
+  width: 100%;
+  height: calc(30% - 10px);
+  background: var(--dr-color-skin-two);
+  border-radius: 50%;
+  margin-top: 10px;
+}
+.dr-robot-left-hand-wrap,
+.dr-robot-right-hand-wrap {
+  width: 60px;
+  height: 200px;
+  display: inline-block;
+}
+
+.dr-robot-body-wrap-two {
+  width: 350px;
+  text-align: center;
+  margin: 0 auto;
+}
+.dr-robot-footer {
+  width: 50px;
+  height: 50px;
+  background-color: var(--dr-color-skin-one);
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 50%;
+  position: relative;
+  background-color: var(--dr-color-skin-two);
+  background-color: var(--dr-color-skin-one);
+  opacity: 0.8;
+  background-image: linear-gradient(
+    to right,
+    var(--dr-color-skin-two),
+    var(--dr-color-skin-two) 5px,
+    var(--dr-color-skin-one) 5px,
+    var(--dr-color-skin-one)
+  );
+  background-size: 10px 100%;
+  animation: rotate-1 3s ease-in-out infinite;
+}
+
+@keyframes rotate-1 {
+  0% {
+    transform: rotate(120deg);
+  }
+  50% {
+    transform: rotate(240deg);
+  }
+  100% {
+    transform: rotate(120deg);
+  }
+}
+.dr-robot-circle {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #001020;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  display: inline-block;
+  border-radius: 50%;
+}
+h2 {
+  font-family: "Rubik Iso", cursive;
+  font-size: 5em;
+  font-weight: 900;
+  color: #211536;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.3;
+}
+.dr-robo-center-body h2 {
+  font-size: 3em;
+  writing-mode: vertical-lr;
+  transition: all 0.3s linear;
+  opacity: 0.2;
+}
+.dr-sekelton-wrap:hover .dr-robo-center-body h2 {
+  opacity: 1;
+}
